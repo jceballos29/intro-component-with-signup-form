@@ -1,38 +1,91 @@
 .App {
-  text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    background-color: var(--Red);
+    background-image: url("./images/bg-intro-desktop.png");
+    background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Container {
+    width: 1440px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sing__up__header sing__up__body";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sing__up__header {
+    grid-area: sing__up__header;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding-right: 60px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sing__up__header h1 {
+    font-size: 48px;
+    width: 500px;
+    line-height: 1.1;
+    margin-bottom: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.sing__up__header p {
+    font-weight: 500;
+    width: 500px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sing__up__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 14px;
+}
+
+@media (max-width: 1024px) {
+    .Container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        gap: 60px;
+    }
+
+    .sing__up__header {
+        width: 100%;
+        align-items: center;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .sing__up__body {
+        width: 100%;
+        align-items: center;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 460px) {
+    .sing__up__header h1 {
+        font-size: 32px;
+        width: 100%;
+        line-height: 1.1;
+        margin-bottom: 30px;
+    }
+
+    .sing__up__header p {
+        font-weight: 500;
+        width: 100%;
+    }
 }
